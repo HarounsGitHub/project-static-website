@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import "./Navbar.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
   const [drop, setDrop] = useState(false);
+  const { pathname } = useLocation();
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false);
   };
@@ -20,13 +21,13 @@ const Navbar = () => {
   };
 
   return (
-    <div className={active ? "navbar active" : "navbar"}>
+    <div className={active || pathname != "/" ? "navbar active" : "navbar"}>
       <div className="container">
         <div className="logo">
-          {/* <Link to="/"> */}
-          <span className="kitchen">Kitchen</span>
-          <span className="genie">Genie</span>
-          {/* </Link> */}
+          <Link to="/" className="link">
+            <span className="kitchen">Kitchen</span>
+            <span className="genie">Genie</span>
+          </Link>
         </div>
         <div className="links">
           <span>Menu</span>
@@ -45,11 +46,21 @@ const Navbar = () => {
                 <div className="options">
                   {currentUser?.isSeller && (
                     <>
-                      <span>Recipes</span>
-                      <span>Add New Recipes</span>
-                      <span>Messages</span>
-                      <span>Orders</span>
-                      <span>Logout</span>
+                      <Link className="link" to="/categories">
+                        Recipes
+                      </Link>
+                      <Link className="link" to="/add">
+                        Add New Recipes
+                      </Link>
+                      <Link className="link" to="/messages">
+                        Messages
+                      </Link>
+                      <Link className="link" to="/orders">
+                        Orders
+                      </Link>
+                      <Link className="link" to="/">
+                        Logout
+                      </Link>
                     </>
                   )}
                 </div>
@@ -58,15 +69,38 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {active && (
-        <>
-          <hr />
-          <div className="menu">
-            <span>Drop 1</span>
-            <span>Drop 2</span>
-          </div>
-        </>
-      )}
+      {active ||
+        (pathname != "/" && (
+          <>
+            <hr />
+            <div className="menu">
+              <Link className="link" to="/">
+                POPULAR
+              </Link>
+              <Link className="link" to="/">
+                MEAL
+              </Link>
+              <Link className="link" to="/">
+                DISH
+              </Link>
+              <Link className="link" to="/">
+                DIET
+              </Link>
+              <Link className="link" to="/">
+                INGREDIENT
+              </Link>
+              <Link className="link" to="/">
+                CUISINE
+              </Link>
+              <Link className="link" to="/">
+                HOLIDAY & SEASON
+              </Link>
+              <Link className="link" to="/">
+                TOOL & TECHNIQUE
+              </Link>
+            </div>
+          </>
+        ))}
     </div>
   );
 };
