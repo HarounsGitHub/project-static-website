@@ -30,8 +30,8 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="links">
-          <span>Menu</span>
           <span>Search</span>
+          <span>Menu</span>
           {!currentUser && <span>Log In</span>}
           {!currentUser?.isSeller && <span>Sell your recipes</span>}
           {!currentUser && <button>Sign Up</button>}
