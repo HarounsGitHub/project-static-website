@@ -1,0 +1,50 @@
+.spotlight {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0px;
+
+  .container {
+    width: 1400px;
+    position: relative;
+    .spotCard {
+      width: 222px;
+      height: 444px;
+      color: white;
+      border-radius: 5px;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      border: solid 4px white;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .twoImages {
+        img {
+        }
+      }
+    }
+  }
+
+  .carousel-initialized {
+    position: static;
+  }
+
+  .carousel-prev,
+  .carousel-next {
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  .carousel-prev {
+    left: -25px;
+  }
+}
