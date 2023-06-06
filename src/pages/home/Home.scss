@@ -1,0 +1,32 @@
+.home {
+  height: 500px !important;
+
+  .collage {
+    --gap: 16px;
+    --num-cols: 3;
+    --row-height: 222px;
+
+    box-sizing: border-box;
+    padding: var(--gap);
+
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .collage-row-2 {
+      grid-row: span 2;
+    }
+
+    @media screen and (max-width: 1024px) {
+      --num-cols: 2;
+      --row-height: 200px;
+    }
+  }
+}
