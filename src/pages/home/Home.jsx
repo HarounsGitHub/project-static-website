@@ -5,6 +5,8 @@ import Slide from "../../components/slide/Slide";
 import { cards } from "../../data";
 import PopCard from "../../components/popCard/popCard";
 import "./Home.scss";
+import Spotlight from "../../components/spotlight/Spotlight";
+import Collage from "../../components/collage/Collage";
 
 const Home = () => {
   return (
@@ -16,6 +18,8 @@ const Home = () => {
         ))}
       </Slide>
       <Partners />
+      <Spotlight />
+      <Collage />
       <div className="collage">
         <img
           className="collage-row-2"

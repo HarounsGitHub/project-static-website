@@ -1,4 +1,4 @@
-export const cardsData = [
+export const cards = [
   {
     id: 1,
     title: "Teriyaki",
