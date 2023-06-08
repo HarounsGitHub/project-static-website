@@ -18,9 +18,9 @@ const Home = () => {
         ))}
       </Slide>
       <Partners />
-      <Spotlight />
+      {/* <Spotlight /> */}
       <Collage />
-      <div className="collage">
+      {/* <div className="collage">
         <img
           className="collage-row-2"
           src="https://cdn.tasteatlas.com/images/regions/8f928125b6c944f887467d5b5535e0c2.jpg"
@@ -52,7 +52,7 @@ const Home = () => {
           src="https://cdn.tasteatlas.com/images/regions/8f928125b6c944f887467d5b5535e0c2.jpg"
           alt=""
         />
-      </div>
+      </div> */}
     </div>
   );
 };
