@@ -72,38 +72,37 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {active ||
-        (pathname != "/" && (
-          <>
-            <hr />
-            <div className="menu">
-              <Link className="link" to="/">
-                POPULAR
-              </Link>
-              <Link className="link" to="/">
-                MEAL
-              </Link>
-              <Link className="link" to="/">
-                DISH
-              </Link>
-              <Link className="link" to="/">
-                DIET
-              </Link>
-              <Link className="link" to="/">
-                INGREDIENT
-              </Link>
-              <Link className="link" to="/">
-                CUISINE
-              </Link>
-              <Link className="link" to="/">
-                HOLIDAY & SEASON
-              </Link>
-              <Link className="link" to="/">
-                TOOL & TECHNIQUE
-              </Link>
-            </div>
-          </>
-        ))}
+      {(active || pathname !== "/") && (
+        <>
+          <hr />
+          <div className="menu">
+            <Link className="link" to="/">
+              POPULAR
+            </Link>
+            <Link className="link" to="/">
+              MEAL
+            </Link>
+            <Link className="link" to="/">
+              DISH
+            </Link>
+            <Link className="link" to="/">
+              DIET
+            </Link>
+            <Link className="link" to="/">
+              INGREDIENT
+            </Link>
+            <Link className="link" to="/">
+              CUISINE
+            </Link>
+            <Link className="link" to="/">
+              HOLIDAY & SEASON
+            </Link>
+            <Link className="link" to="/">
+              TOOL & TECHNIQUE
+            </Link>
+          </div>
+        </>
+      )}
     </div>
   );
 };
