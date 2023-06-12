@@ -2,7 +2,13 @@ import "./Categories.scss";
 import { useState } from "react";
 
 const Categories = () => {
+  const [sort, setSort] = useState("sales");
   const [drop, setDrop] = useState(false);
+
+  const reSort = (type) => {
+    setSort(type);
+    setDrop(false);
+  };
 
   return (
     <div className="categories">
@@ -23,7 +29,9 @@ const Categories = () => {
           </div>
           <div className="right">
             <span className="sortBy">Sort by</span>
-            <span className="sortType"></span>
+            <span className="sortType">
+              {sort === "sales" ? "Top Selling" : "Newest"}
+            </span>
             <img
               src="./images/down.png"
               alt="down arrow"
@@ -32,9 +40,8 @@ const Categories = () => {
 
             {drop && (
               <div className="rightMenu">
-                <span>Newest</span>
-                <span>Top Selling</span>
-                <span>Most Popular</span>
+                <span onClick={() => reSort("createdAt")}>Newest</span>
+                <span onClick={() => reSort("sales")}>Top Selling</span>
               </div>
             )}
           </div>
