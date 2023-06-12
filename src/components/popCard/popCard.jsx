@@ -6,7 +6,7 @@ import "./PopCard.scss";
 
 function PopCard({ card }) {
   return (
-    <Link to="/gigs?cat=dessert">
+    <Link to="/categories?category=dessert">
       <div className="popCard">
         <img src={card.img} alt="" />
         <div className="overlay"></div>
