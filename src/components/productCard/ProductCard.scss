@@ -35,6 +35,7 @@
 
     p {
       color: #111;
+      height: 38px;
     }
 
     .star {
@@ -71,6 +72,9 @@
       height: 16px;
       cursor: pointer;
       object-fit: cover;
+      &:hover {
+        -webkit-filter: invert(100%) !important;
+      }
     }
 
     .price {

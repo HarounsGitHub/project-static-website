@@ -2,9 +2,9 @@ import React from "react";
 import "./ProductCard.scss";
 import { Link } from "react-router-dom";
 
-const ProductCard = () => {
+const ProductCard = ({ item }) => {
   return (
-    <Link to="/prod/123" className="link">
+    <Link to="/recipe/123" className="link">
       <div className="productCard">
         <img src={item.img} alt="" />
         <div className="info">

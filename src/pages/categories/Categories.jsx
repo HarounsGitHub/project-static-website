@@ -1,5 +1,7 @@
 import "./Categories.scss";
 import { useState } from "react";
+import { categories } from "../../data";
+import ProductCard from "../../components/productCard/ProductCard";
 
 const Categories = () => {
   const [sort, setSort] = useState("sales");
@@ -28,8 +30,8 @@ const Categories = () => {
             <button>Apply</button>
           </div>
           <div className="right">
-            <span className="sortBy">Sort by</span>
-            <span className="sortType">
+            <span className="sortBy">Sort by :</span>
+            <span className="sortType" onClick={() => setDrop(!drop)}>
               {sort === "sales" ? "Top Selling" : "Newest"}
             </span>
             <img
@@ -40,13 +42,20 @@ const Categories = () => {
 
             {drop && (
               <div className="rightMenu">
-                <span onClick={() => reSort("createdAt")}>Newest</span>
-                <span onClick={() => reSort("sales")}>Top Selling</span>
+                {sort === "sales" ? (
+                  <span onClick={() => reSort("createdAt")}>Newest</span>
+                ) : (
+                  <span onClick={() => reSort("sales")}>Top Selling</span>
+                )}
               </div>
             )}
           </div>
         </div>
-        <div className="cards"></div>
+        <div className="cards">
+          {categories.map((category) => (
+            <ProductCard key={category.id} item={category} />
+          ))}
+        </div>
       </div>
     </div>
   );
